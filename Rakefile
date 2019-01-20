@@ -10,6 +10,11 @@ namespace :db do
     ActiveRecord::Migrator.migrate("db/migrate/")
   end
 
+  desc "start console"
+  task :console do
+    Pry.start
+  end
+  
   desc "drop and recreate the db"
   task :reset => [:drop, :migrate]
 
